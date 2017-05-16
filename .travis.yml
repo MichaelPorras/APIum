@@ -1,0 +1,16 @@
+language: python
+sudo: false
+cache: pip
+
+python:
+  - "2.7"
+
+services:
+  - redis-server
+
+before_install:
+  - pip install flake8
+  - flake8
+
+install:
+  - pip install -r requirements.txt
