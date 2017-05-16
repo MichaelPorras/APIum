@@ -5,5 +5,5 @@ import time
 @celery.task
 def runthis():
     for i in range(0, 5):
-        print 'lololool'
+        print 'lol %s' % i
         time.sleep(1)

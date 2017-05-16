@@ -20,6 +20,10 @@ class TestCase(unittest.TestCase):
         self.assertEqual(r.status_code, 200)
         self.assertEqual(r.data, 'Hello')
 
+    def test_initial_task(self):
+        r = self.app.get('/tasks/test')
+        self.assertEqual(r.status_code, 200)
+
 
 if __name__ == '__main__':
     unittest.main()

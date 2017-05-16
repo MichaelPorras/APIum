@@ -2,10 +2,12 @@
 from flask import current_app
 from ..tasks import tasks
 import jobs
+import time
 
 
-@tasks.route('/core_pull/<tenant_id>')
-def core_device_pull(tenant_id):
+@tasks.route('/test')
+def core_device_pull():
     result = jobs.runthis.apply_async()
     current_app.logger.info(result)
-    return 'This should return, like, nonw'
+    current_time = time.strftime("%c")
+    return 'Current date time is %s' % current_time
